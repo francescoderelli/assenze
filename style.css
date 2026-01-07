@@ -1,0 +1,139 @@
+:root{
+  --bg:#0b1220;
+  --card:#111a2e;
+  --card2:#0f1730;
+  --text:#e8eefc;
+  --muted:#b7c4e6;
+  --line:#1e2a4d;
+  --ok:#18a957;
+  --err:#e5484d;
+  --warn:#f0b429;
+  --btn:#2e6bff;
+  --btn2:#1d4ed8;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 0%, #17234a 0%, var(--bg) 55%);
+  color:var(--text);
+}
+
+.wrap{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 18px 40px;
+}
+
+.hero h1{
+  margin: 0 0 6px;
+  font-size: 28px;
+  letter-spacing: .2px;
+}
+.sub{
+  margin:0 0 18px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.card{
+  background: linear-gradient(180deg, var(--card) 0%, var(--card2) 100%);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom: 10px;
+}
+.label{
+  font-weight: 700;
+  min-width: 170px;
+}
+.file{
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+}
+
+.status{
+  margin: 10px 0 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  min-height: 18px;
+}
+.status.ok{
+  border: 1px solid rgba(24,169,87,.35);
+  color: #c8f5d9;
+  background: rgba(24,169,87,.08);
+}
+.status.err{
+  border: 1px solid rgba(229,72,77,.35);
+  color: #ffd1d3;
+  background: rgba(229,72,77,.08);
+}
+.status.warn{
+  border: 1px solid rgba(240,180,41,.35);
+  color: #ffeac2;
+  background: rgba(240,180,41,.08);
+}
+
+.checks-title{
+  margin-top: 10px;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: .2px;
+}
+.checks{
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  line-height: 1.45;
+  color: var(--text);
+  font-size: 13px;
+}
+.checks div{
+  padding: 2px 0;
+  white-space: pre-wrap;
+}
+
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top: 12px;
+}
+
+.btn{
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 0;
+  background: linear-gradient(180deg, var(--btn) 0%, var(--btn2) 100%);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,.25);
+}
+.btn:disabled{
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.hint{
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  lin
