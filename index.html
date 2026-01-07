@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Presenze → Report ore annue</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>Presenze → Report ore annue</h1>
+      <p class="sub">
+        Carica <b>Presenze_Base.xlsx</b>. Il sistema controlla la struttura del file e poi genera l’Excel con pivot e percentuali.
+      </p>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <label class="label" for="filePresenze">Presenze_Base.xlsx</label>
+        <input id="filePresenze" class="file" type="file" accept=".xlsx" />
+      </div>
+
+      <div id="status" class="status"></div>
+
+      <div class="checks-title">Controlli</div>
+      <div id="checks" class="checks"></div>
+
+      <div class="actions">
+        <button id="btnRun" class="btn" disabled>Genera Excel</button>
+      </div>
+
+      <div class="hint">
+        Output: <b>Ore_Annue_per_Risorsa_e_Tipologia.xlsx</b> (download automatico).<br/>
+        Nota: eventuali causali non mappate vengono trattate come <b>presenza</b> (warning).
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>© Presenze Report</span>
+    </footer>
+  </main>
+
+  <!-- Librerie -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+
+  <!-- App -->
+  <script src="./app.js"></script>
+</body>
+</html>
