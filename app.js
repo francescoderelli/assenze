@@ -1,5 +1,59 @@
 /* global XLSX, ExcelJS */
 
+window.addEventListener("DOMContentLoaded", () => {
+  // ==============================
+  // UI
+  // ==============================
+  const elPresenze = document.getElementById("filePresenze");
+  const btnRun     = document.getElementById("btnRun");
+  const statusEl   = document.getElementById("status");
+  const checksEl   = document.getElementById("checks");
+
+  // Se anche uno solo è null, la pagina non potrà mai validare
+  if (!elPresenze || !btnRun || !statusEl || !checksEl) {
+    console.error("ID mancanti in index.html:", {
+      filePresenze: !!elPresenze,
+      btnRun: !!btnRun,
+      status: !!statusEl,
+      checks: !!checksEl,
+    });
+    if (statusEl) statusEl.textContent = "❌ Errore pagina: mancano elementi HTML (ID non trovati).";
+    return;
+  }
+
+  // evita race condition: solo l’ultima validazione può abilitare/disabilitare
+  let VALIDATION_SEQ = 0;
+
+  function setStatus(msg, kind="") {
+    statusEl.className = "status " + (kind || "");
+    statusEl.textContent = msg;
+  }
+  function setChecks(lines) {
+    checksEl.innerHTML = "";
+    for (const l of lines) {
+      const div = document.createElement("div");
+      div.textContent = l;
+      checksEl.appendChild(div);
+    }
+  }
+  function readyBtn(enabled) { btnRun.disabled = !enabled; }
+
+  // ✅ debug minimo: ti dice subito se l’evento change parte
+  console.log("✅ app.js init ok");
+
+  // ------------------------------------------------
+  // QUI SOTTO incolla TUTTO il resto del tuo app.js
+  // (funzioni readXlsxToAOA, validateIfPossible, btnRun click, ecc.)
+  // e NON lasciare più codice fuori da questo blocco.
+  // ------------------------------------------------
+
+  // ... INCOLLA QUI IL RESTO DEL CODICE CHE AVEVI (dal normStr in giù) ...
+
+});
+
+
+/* global XLSX, ExcelJS */
+
 // ==============================
 // UI
 // ==============================
